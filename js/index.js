@@ -40,3 +40,77 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const navItems = document.querySelectorAll('nav a');
+navItems.forEach((item, index) => {
+    const navItemKey = `nav-item-${index + 1}`;
+    item.textContent = siteContent["nav"][navItemKey];
+});
+
+const bigTitle=document.querySelector(".cta-text h1");
+bigTitle.textContent=siteContent["cta"]["h1"];
+
+const bigImg=document.querySelector("#cta-img");
+bigImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const button=document.querySelector("button");
+button.textContent=siteContent["cta"]["button"];
+
+// main content top content
+const texts = document.querySelectorAll('.top-content .text-content');
+
+texts.forEach((text, index) => {
+  const h4Element = text.querySelector('h4');
+  const pElement = text.querySelector('p');
+
+  if (index === 0) {
+    h4Element.textContent = siteContent["main-content"]["features-h4"];
+    pElement.textContent = siteContent["main-content"]["features-content"];
+  } else if (index === 1) {
+    h4Element.textContent = siteContent["main-content"]["about-h4"];
+    pElement.textContent = siteContent["main-content"]["about-content"];
+  }
+});
+
+const middleImg=document.querySelector(".middle-img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+// main content bottom content
+const bottomTexts= document.querySelectorAll(".bottom-content .text-content");
+bottomTexts.forEach((bottomText, index) =>{
+  const h4Element=bottomText.querySelector("h4");
+  const pElement=bottomText.querySelector("p");
+
+  if(index===0){
+    h4Element.innerText=siteContent["main-content"]["services-h4"];
+    pElement.innerText=siteContent["main-content"]["services-content"];
+  }else if(index === 1){
+    h4Element.innerText=siteContent["main-content"]["product-h4"];
+    pElement.innerText=siteContent["main-content"]["product-content"];
+  }else if(index === 2){
+    h4Element.innerText=siteContent["main-content"]["vision-h4"];
+    pElement.innerText=siteContent["main-content"]["vision-content"];
+  }
+})
+
+//contact
+const contacts=document.querySelector(".contact h4");
+contacts.textContent=siteContent["contact"]["contact-h4"];
+
+const contectsInfo=document.querySelectorAll(".contact p");
+contectsInfo.forEach((contectInfo,index)=>{
+  const pElement=contectInfo.querySelector("p");
+
+  if(index===0){
+    contectInfo.textContent = siteContent["contact"]["address"];
+  }else if(index===1){
+    contectInfo.textContent = siteContent["contact"]["phone"];
+  }else if(index===2){
+    contectInfo.textContent = siteContent["contact"]["email"];
+  }
+})
+
+//footer
+const footer=document.querySelector("footer p");
+footer.textContent=siteContent["footer"]["copyright"];
+
